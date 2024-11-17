@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEvento.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             Title="MainPage"
+             BackgroundColor="DarkOrange">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                     Padding="10"
+                     Spacing="10">
+            <Label
+                Text="Cadastro de Evento"
+                FontFamily="EmilyCandy"
+                FontSize="40"
+                TextColor="white"/>
+
+            <Frame></Frame>
+            
+            <Label Text="Quando será o Evento?"
+                   TextTransform="Uppercase"
+                   FontFamily="dm"
+                   FontSize="Subtitle"
+                   TextColor="white"/>
+
+            <Frame Margin="5" Padding="5">
+                <VerticalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="Data de Início:" />
+                <DatePicker x:Name="dtpck_inicio"
+                            DateSelected="dtpck_inicio_DateSelected"
+                                        Format="dd/MM/yyyy" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Label Text="Data de término:" />
+                <DatePicker x:Name="dtpck_fim"
+                                        Format="dd/MM/yyyy" />
+            </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame></Frame>
+
+            <Label Text="Número de participantes:"
+                   FontSize="Subtitle"
+                   FontFamily="dm"
+                   TextTransform="Uppercase"
+                   TextColor="White"/>
+
+            <Frame Margin="5" Padding="5">
+                <VerticalStackLayout>
+
+                    <Label 
+                          Text="{Binding Value}"
+                          BindingContext="{x:Reference stp_participante}"
+                          HorizontalTextAlignment="Center"/>
+
+                    <Stepper 
+                         x:Name="stp_participante"
+                         Minimum="0"
+                         Maximum="100"
+                         Increment="1" 
+                        HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame></Frame>
+
+            <Label Text="Escolha o local do evento"
+           TextTransform="Uppercase"
+           FontSize="Subtitle"
+           FontFamily="dm"
+           TextColor="White"/>
+
+            <Frame Padding="5" Margin="5">
+                <VerticalStackLayout>
+
+                    <Picker x:Name="pck_locais"
+                                Title="Selecione o local"
+                                ItemDisplayBinding="{Binding Descricao}"/>
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <Button
+                Text="Avançar"
+                x:Name="Btn_avancar"
+                Clicked="Btn_avancar_Clicked"
+                BackgroundColor="{StaticResource Gray100}"
+                TextColor="Black"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

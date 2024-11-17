@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEvento.Confirmar.PaginaDados"
+             NavigationPage.HasNavigationBar="False"
+             Title="PaginaDados"
+             BackgroundColor="DarkOrange">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                             Padding="10"
+                             Spacing="10">
+            
+            <Label Text="Confirmação de Evento"
+                   FontFamily="EmilyCandy"
+                   FontSize="35"
+                   TextColor="white" />
+
+ 
+            <Label Text="Data do evento escolhida"
+                   TextTransform="Uppercase"
+                   FontFamily="dm"
+                   FontSize="Subtitle"
+                   TextColor="white" />
+            
+            <Frame Padding="5" Margin="5">
+                
+                <VerticalStackLayout>
+                    
+                <Label Text="{Binding Datainicio}"/>
+
+                <Label Text="{Binding Datafim}"/>
+
+                </VerticalStackLayout>
+                
+            </Frame>
+
+            <Label Text="Quantidade de dias"
+                TextTransform="Uppercase"
+                FontFamily="dm"
+                FontSize="Subtitle"
+                TextColor="white" />
+            
+            <Frame>
+
+                <VerticalStackLayout>
+
+                    <Label Text="Quantidade de dias:"/>
+
+                    <Label Text="{Binding Dias}"/>
+
+                </VerticalStackLayout>
+                
+            </Frame>
+
+            <Label Text="Número de participantes:"
+                   FontSize="Subtitle"
+                   FontFamily="dm"
+                   TextTransform="Uppercase"
+                   TextColor="White" />
+            
+            <Frame Padding="5" Margin="5">
+
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding QntParticipantes}"/>
+
+                </VerticalStackLayout>    
+                
+            </Frame>
+
+            <Label Text="Local do evento"
+                   TextTransform="Uppercase"
+                   FontSize="Subtitle"
+                   FontFamily="dm"
+                   TextColor="White" />
+            
+            <Frame Padding="5" Margin="5">
+
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding LocalSelecionado.Descricao}"/>
+
+                </VerticalStackLayout>
+                
+            </Frame>
+
+            <Label Text="Custo total do evento"
+                   TextTransform="Uppercase"
+                   FontSize="Subtitle"
+                   FontFamily="dm"
+                   TextColor="White" />
+            
+            <Frame Padding="5" Margin="5">
+
+                <VerticalStackLayout>
+
+                    <Label Text="{Binding ValorTotal}"/>
+
+                </VerticalStackLayout>
+                
+            </Frame>
+
+            <Button Text="Confirmar"
+                    x:Name="Btn_confirmar"
+                    Clicked="Btn_confirmar_Clicked"
+                    BackgroundColor="{StaticResource Gray100}"
+                    TextColor="Black" />
+
+            <Button Text="Voltar"
+                    x:Name="Btn_voltar"
+                    Clicked="Btn_voltar_Clicked"
+                    BackgroundColor="{StaticResource Gray100}"
+                    TextColor="Black" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
